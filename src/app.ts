@@ -58,7 +58,7 @@ const renderShell = (buildInfo: BuildInfo): void => {
         <span class="sigil" aria-hidden="true"></span>
         <div>
           <h1>Avida Digital Evolution</h1>
-          <p>v${buildInfo.version} · build ${buildInfo.commit}${buildInfo.latestMainCommit ? ` · main ${buildInfo.latestMainCommit}` : ''}</p>
+          <p>v${buildInfo.version} · commit ${buildInfo.latestMainCommit ?? buildInfo.commit}</p>
         </div>
       </div>
       <nav class="toplinks" aria-label="Project links">
@@ -142,8 +142,7 @@ const renderShell = (buildInfo: BuildInfo): void => {
         <section class="build-panel" aria-label="Build metadata">
           <dl>
             <div><dt>Version</dt><dd>v${buildInfo.version}</dd></div>
-            <div><dt>Build commit</dt><dd><a href="${buildInfo.repository}/commit/${buildInfo.fullCommit}" target="_blank" rel="noreferrer">${buildInfo.commit}</a></dd></div>
-            <div><dt>Main commit</dt><dd>${buildInfo.latestMainCommit && buildInfo.latestMainCommitUrl ? `<a href="${buildInfo.latestMainCommitUrl}" target="_blank" rel="noreferrer">${buildInfo.latestMainCommit}</a>` : 'unavailable'}</dd></div>
+            <div><dt>Commit</dt><dd>${buildInfo.latestMainCommit && buildInfo.latestMainCommitUrl ? `<a href="${buildInfo.latestMainCommitUrl}" target="_blank" rel="noreferrer">${buildInfo.latestMainCommit}</a>` : buildInfo.commit}</dd></div>
           </dl>
         </section>
       </aside>

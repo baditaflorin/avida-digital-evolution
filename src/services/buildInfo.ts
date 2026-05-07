@@ -24,9 +24,9 @@ export type BuildInfo = z.infer<typeof BuildInfoSchema> & {
 const queryClient = new QueryClient();
 const fallbackBuildInfo = {
   version: import.meta.env.VITE_APP_VERSION ?? '0.1.0',
-  commit: 'dev',
-  fullCommit: 'dev',
-  builtAt: new Date(0).toISOString(),
+  commit: 'runtime-main',
+  fullCommit: 'runtime-main',
+  builtAt: 'static',
   repository: 'https://github.com/baditaflorin/avida-digital-evolution',
   paypalUrl: 'https://www.paypal.com/paypalme/florinbadita',
   pagesUrl: 'https://baditaflorin.github.io/avida-digital-evolution/',
