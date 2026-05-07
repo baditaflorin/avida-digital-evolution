@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -eu
+
+message_file="$1"
+first_line="$(head -n 1 "$message_file")"
+
+case "$first_line" in
+  feat:\ *|fix:\ *|docs:\ *|chore:\ *|refactor:\ *|test:\ *|ops:\ *|data:\ *|build:\ *|ci:\ *|perf:\ *|style:\ *|revert:\ *)
+    exit 0
+    ;;
+  *)
+    echo "Commit message must use Conventional Commits, e.g. feat: add simulation"
+    exit 1
+    ;;
+esac
