@@ -1,0 +1,44 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build/cache outputs
+dist/
+dist-data/
+tmp/
+coverage/
+.vite/
+.cache/
+
+# Go/Python general noise
+bin/
+*.test
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs
+*.log
+
+# Playwright
+playwright-report/
+test-results/
